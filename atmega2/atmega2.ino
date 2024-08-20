@@ -1,4 +1,4 @@
-int myArray[] = {8,9,10};
+int myArray[] = {8,9,10,11};
 int arraySize = 3;
 
 void setup() {
@@ -13,6 +13,9 @@ void setup() {
 }
 
 void loop() {
+  // customize functionality for pwm in 11
+  analogWrite(11, 71);                  // set the analogWrite of pin 11 to 1.4 volts
+
   // loop over pins
   if (analogRead(A5) > 512) {
     for (int i = 0; i < arraySize; i++) {
@@ -26,5 +29,8 @@ void loop() {
 
     }
   }
+
+  // fcusotmize unctionality for pwm in 11
+  analogWrite(11, 0);                  // set the analogWrite of pin 11 to 0 volts when script finishes
 
 }
